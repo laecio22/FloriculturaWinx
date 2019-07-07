@@ -1,0 +1,14 @@
+h1{
+    font-size: 60px;
+    color: blue;
+    text-align: center;
+
+}
+
+body{
+    background-color:yellow;
+}
+
+.item{
+    list-style: none;
+}

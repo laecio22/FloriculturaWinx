@@ -1,0 +1,46 @@
+<a href="/">Página principal</a>
+<!DOCTYPE html>
+{% load static %}
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>Floricultura Winx</title>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	</head>
+	<body>
+	<header role="banner" id="fh5co-header">
+		<div class="container">
+			<div class="row">
+				<nav class="navbar navbar-default navbar-fixed-top">
+					<div class="navbar-header">
+						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
+						<a class="navbar-brand" href="/">Floricultura Winx</a>
+					</div>
+					<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<li class=""><a href="{% url 'contato' %}" data-nav-section="home"><span>Contato</span></a></li>
+							<li><a href="{% url 'sobre' %}" data-nav-section="services"><span>Sobre Nós</span></a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+	  </div>
+	</header>
+
+	<section id="fh5co-home" data-section="home" style="background-image: url({% static 'imagens/Tynix.jpg' %});" data-stellar-background-ratio="0.5">
+		<div class="gradient"></div>
+		<div class="container">
+			<div class="text-wrap">
+				<div class="text-inner">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center">
+							<h1 class="animate-box"><span class="big">Quem somos nós</span> <br><span></span> <br><span class="medium">Somos a Floricultura Winx , <br><br>uma das <br><br>maiores Floriculturas <br><br>da América Latina. Surgimos <br><br>como uma pequena empresa. <br><br>Formado por estudantes do <br><br>IFPI <br><br>Jayro, Flávia, Laécio,<br><br> André  e Mauricio.</span><br><span></span> <br> <span class="medium"></span></h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	</body>
+</html>

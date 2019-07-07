@@ -1,0 +1,16 @@
+{% extends 'produtos/base.html' %}
+
+{% block title %}
+     Detalhar Produto
+{% endblock %}
+
+{% block content %}
+    <h2>Detalhar Produto :</h2>
+    <ul>
+       <li><b>Nome:</b>{{ produto.nome }}</li>
+       <li><b>Codigo:</b>{{ produto.codigo }}</li>
+       <li><b>Descricao:</b>{{ produto.descricao }}</li>
+    </ul>
+    <a href="{% url 'produtos:listar' %}">Voltar a listagem</a>
+
+{% endblock %}

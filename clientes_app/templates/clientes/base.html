@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>{% block title %}
+        Floricultura Winx
+    {% endblock %}</title>
+</head>
+<body>
+     <div id="pagina">
+       <a href="{% url 'logout' %}">Sair</a>
+       <a href="/home/">Home</a>
+       <a href="/">Página principal</a>
+    </div>
+
+    <div id="header">
+        <hr color="#333333">
+        <h1>Floricultura Winx - Clientes</h1>
+        <hr color="#333333">
+    </div>
+
+
+    <div id="content">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+</body>
+</html>

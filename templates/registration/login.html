@@ -1,0 +1,39 @@
+<a href="/">Página Inicial</a>
+
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+</head>
+<body>
+    {% block content %}
+      <div class="row"  >
+        <div class="col-md-4 offset-md-4" >
+             <div class="card auth-card">
+                  <div class="card-body">
+                      <h4 class="card-title text-center">Login</h4>
+                      <form method="post">
+                           {% csrf_token %}
+                           <input type="hidden" name="next" value="{{ next }}">
+                           {{form|crispy}}
+                           <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+
+                       </form>
+                       <p align="center" >Quer criar uma conta?<a href="/accounts/register">Clique aqui!</a></p>
+
+
+                  </div>
+             </div>
+        </div>
+      </div>
+
+    {% endblock %}
+
+
+</body>
+</html>

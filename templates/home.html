@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Floricultura Winx</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="header">
+        <hr color="#333333">
+        <h1>Floricultura Winx</h1>
+        <hr color="#333333">
+    </div>
+
+    <div id="content">
+        {% block content %}
+          <ul>
+            <li class="item"><a href="{% url 'vendas:listar_vendas' %}" >Vendas</a></li>
+            <li class="item"><a href="{% url 'produtos:listar' %}">Produtos</a></li>
+            <li class="item"><a href="{% url 'clientes:listar' %}">Clientes</a></li>
+
+          </ul>
+          <h2>Seja Bem Vindo!!</h2>
+
+          <div >
+             {% if user.is_authenticated %}
+                <p class="logged-in-p">
+                    Olá {{ user.username }} seja bem vindo, o que deseja fazer hoje?
+                    <span class="sair"><a href="{% url 'logout' %}">Sair</a></span>
+
+                </p >
+
+             {% endif %}
+
+          </div>
+
+        {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+{% extends 'produtos/base.html' %}
+
+{% block title %}
+      Lista de Produtos
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'produtos:adicionar' %}"><i class="fas fa-plus">Adicionar novo produto</i></a>
+   <h2>Produtos:</h2>
+   <table border="1">
+      <thead>
+         <tr>
+            <th>Nome</th>
+            <th>Codigo</th>
+            <th>Descricao</th>
+            <th>Detalhar</th>
+            <th>Editar</th>
+            <th>Remover</th>
+         </tr>
+      </thead>
+      <tbody>
+        {% if produtos %}
+              {% for produto in produtos %}
+                    <tr>
+                        <td>{{ produto.nome }}</td>
+                        <td>{{ produto.codigo}}</td>
+                        <td>{{ produto.descricao }}</td>
+                        <td align="center"><a href="{% url 'produtos:detalhar' produto.id %}"><i class="fas fa-user"></i></a></td>
+                        <td align="center"><a href="{% url 'produtos:atualizar' produto.id %}"><i class="fas fa-edit"></i></a></td>
+                        <td align="center"><a href="{% url 'produtos:remover' produto.id %}"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr>
+                {% endfor %}
+        {% else %}
+           <i>Não há produtos cadastrados.</i>
+
+        {% endif %}
+      </tbody>
+
+   </table>
+{% endblock %}

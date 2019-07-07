@@ -1,0 +1,40 @@
+{% extends 'vendas/base.html' %}
+
+{% block title %}
+    Vendas Efetuadas
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'vendas:efetuar_venda' %}"><i class="fas fa-plus">Efetuar Venda</i></a>
+    <h2>Vendas</h2>
+
+    <table border="1">
+        <thead align="center">
+          <tr>
+             <th>Número</th>
+             <th>Data</th>
+             <th>Cliente</th>
+             <th>Detalhar</th>
+             <th>Editar</th>
+             <th>Remover</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% if vendas %}
+               {% for venda in vendas %}
+                    <tr>
+                        <td>{{ venda.numero }}</td>
+                        <td>{{ venda.data_venda }}</td>
+                        <td>{{ venda.cliente.nome }}</td>
+                        <td align="center"><a href="{% url 'vendas:detalhar_venda' venda.id %}"><i class="fas fa-user"></i></a></td>
+                        <td align="center"><a href="{% url 'vendas:atualizar_venda' venda.id %}"><i class="fas fa-edit"></i></a></td>
+                        <td align="center"><a href="{% url 'vendas:remover_venda' venda.id %}"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr>
+               {% endfor %}
+            {% else %}
+                  <p>Não há vendas registradas.</p>
+            {% endif %}
+        </tbody>
+    </table>
+
+{% endblock content %}

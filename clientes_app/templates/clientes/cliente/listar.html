@@ -1,0 +1,37 @@
+{% extends 'clientes/base.html' %}
+
+{% block title %}
+    Lista de Clientes
+{% endblock %}
+
+{% block content %}
+    <a href="{% url 'clientes:adicionar' %}"><i class="fas fa-plus">Adicionar novo cliente</i></a>
+    <h2>Clientes:</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Detalhar</th>
+                <th>Editar</th>
+                <th>Remover</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% if clientes %}
+                {% for cliente in clientes %}
+                    <tr>
+                        <td>{{ cliente.nome }}</td>
+                        <td>{{ cliente.email }}</td>
+                        <td align="center"><a href="{% url 'clientes:detalhar' cliente.id %}"><i class="fas fa-user"></i></a></td>
+                        <td align="center"><a href="{% url 'clientes:atualizar' cliente.id %}"><i class="fas fa-edit"></i></a></td>
+                        <td align="center"><a href="{% url 'clientes:remover' cliente.id %}"><i class="fas fa-trash-alt"></i></a></td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <i>Não há clientes cadastrados.</i>
+            {% endif %}
+        </tbody>
+    </table>
+
+{% endblock %}

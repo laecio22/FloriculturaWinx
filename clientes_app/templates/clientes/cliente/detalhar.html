@@ -1,0 +1,16 @@
+{% extends 'clientes/base.html' %}
+
+{% block title %}
+    Detalhar cliente
+{% endblock %}
+
+{% block content %}
+    <h2>Detalhar cliente:</h2>
+
+    <ul>
+        <li><b>Email: </b>{{ cliente.email }}</li>
+        <li><b>Nome: </b>{{ cliente.nome }}</li>
+    </ul>
+
+    <a href="{% url 'clientes:listar' %}">Voltar para a Listagem</a>
+{% endblock %}
