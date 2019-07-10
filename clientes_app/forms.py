@@ -9,3 +9,13 @@ class ClienteNovoForm(forms.ModelForm):
             'email',
             'nome'
         ]
+    def clean_email(self):
+
+        email = self.cleaned_data['email']
+
+        if email:
+            cliente = Cliente.objects.filter(email=email).exists()
+
+            if cliente:
+                raise forms.ValidationError('Já existe um cliente cadastrado com esse email')
+            return cliente
