@@ -1,3 +1,4 @@
 kenv/
 .idea/
 *.xml
+db.sqlite3
